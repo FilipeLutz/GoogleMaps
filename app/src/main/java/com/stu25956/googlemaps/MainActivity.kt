@@ -3,45 +3,25 @@ package com.stu25956.googlemaps
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.google.android.gms.maps.MapsInitializer
+import com.google.android.libraries.places.api.Places
+import com.stu25956.googlemaps.navigation.AppNavigation
 import com.stu25956.googlemaps.ui.theme.GoogleMapsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // Initialize Google Maps SDK
+        MapsInitializer.initialize(applicationContext)
+
+        // Google Places API directly with the key
+        Places.initialize(applicationContext, "AIzaSyCOle444KogrzoizjjUMGXWP_nFMjTojkY")
+
         setContent {
             GoogleMapsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                AppNavigation()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    GoogleMapsTheme {
-        Greeting("Android")
     }
 }
