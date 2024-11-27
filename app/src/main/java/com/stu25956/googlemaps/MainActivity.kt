@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
 
         // Google Places API directly with the key
         Places.initialize(applicationContext, "AIzaSyCOle444KogrzoizjjUMGXWP_nFMjTojkY")
-
+        
         setContent {
             GoogleMapsTheme {
                 AppNavigation()

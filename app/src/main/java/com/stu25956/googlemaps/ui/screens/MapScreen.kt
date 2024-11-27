@@ -75,7 +75,7 @@ fun MapScreen(navController: NavController, latitude: Double, longitude: Double)
                 // Display the marker with the current color
                 Marker(
                     state = MarkerState(position = initialLatLng),
-                    title = "Marker",
+                    title = "Location",
                     snippet = "Lat: ${initialLatLng.latitude}, Lng: ${initialLatLng.longitude}",
                     icon = BitmapDescriptorFactory.defaultMarker(markerColor)
                 )

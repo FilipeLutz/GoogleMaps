@@ -34,6 +34,7 @@ import com.google.android.gms.maps.model.LatLng
 
 @Composable
 fun InputScreen(navController: NavController) {
+    // Mutable state for text fields
     var latitudeText by remember { mutableStateOf("") }
     var longitudeText by remember { mutableStateOf("") }
     var addressText by remember { mutableStateOf("") }
@@ -63,7 +64,7 @@ fun InputScreen(navController: NavController) {
                 null
             }
         } catch (e: Exception) {
-            // Handle any exceptions (e.g., no network)
+            // Handle any exceptions
             Toast.makeText(context, "Error trying to find address", Toast.LENGTH_SHORT).show()
             null
         }
