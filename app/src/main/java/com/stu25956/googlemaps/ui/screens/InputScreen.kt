@@ -191,7 +191,7 @@ fun InputScreen(navController: NavController) {
                     .align(Alignment.CenterHorizontally)
             ) {
                 Text(
-                    "Show on Map",
+                    "Go to Map",
                     style = MaterialTheme.typography.titleLarge
                 )
             }

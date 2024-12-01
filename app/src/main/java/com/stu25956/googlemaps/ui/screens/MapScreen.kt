@@ -96,7 +96,7 @@ fun MapScreen(navController: NavController, latitude: Double, longitude: Double)
                 .padding(8.dp)
         ) {
             Text(
-                "Change Marker Color",
+                "Change Marker Colour",
                 style = MaterialTheme.typography.titleMedium)
         }
 
@@ -111,7 +111,7 @@ fun MapScreen(navController: NavController, latitude: Double, longitude: Double)
                 .padding(8.dp)
         ) {
             Text(
-                "Back to Search",
+                "Back",
                 style = MaterialTheme.typography.titleMedium)
         }
     }
